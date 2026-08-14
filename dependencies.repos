@@ -1,0 +1,6 @@
+repositories:
+  robotis_mujoco_menagerie:
+    type: git
+    url: https://github.com/ROBOTIS-GIT/robotis_mujoco_menagerie.git
+    version: d8344c0dbe7a00208d0301111523dde65efc174a
+
