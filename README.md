@@ -12,15 +12,20 @@ ROS 2 and MuJoCo robotics simulation workspace.
 
 ## Workspace
 
-ROS 2 packages are located under `src/`.
-
-Build with:
-
 ```bash
+git clone https://github.com/Sohaib-Snouber/MuJoCoROSTrippleS.git
+cd MuJoCoROSTrippleS
+
+rosdep update
+
+rosdep install \
+  --from-paths src \
+  --ignore-src \
+  -r \
+  -y
+
 colcon build
-```
 
-```bash
 source install/setup.bash
 ```
 
