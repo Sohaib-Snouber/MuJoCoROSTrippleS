@@ -18,6 +18,10 @@ cd MuJoCoROSTrippleS
 
 rosdep update
 
+vcs import \
+  src/turtlebot3_mujoco_sim/vendor \
+  < dependencies.repos
+
 rosdep install \
   --from-paths src \
   --ignore-src \
