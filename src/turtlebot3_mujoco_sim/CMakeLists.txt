@@ -12,20 +12,14 @@ find_package(ament_cmake REQUIRED)
 # find_package(<dependency> REQUIRED)
 
 
-set(ROBOTIS_TB3_MODEL_DIR
-  "${CMAKE_CURRENT_SOURCE_DIR}/vendor/robotis_mujoco_menagerie/robotis_tb3"
+install(
+  DIRECTORY description
+  DESTINATION share/${PROJECT_NAME}
 )
 
-if(NOT EXISTS "${ROBOTIS_TB3_MODEL_DIR}/scene_turtlebot3_burger.xml")
-  message(FATAL_ERROR
-    "ROBOTIS MuJoCo models are missing. "
-    "Run: vcs import src/turtlebot3_mujoco_sim/vendor < dependencies.repos"
-  )
-endif()
-
 install(
-  DIRECTORY "${ROBOTIS_TB3_MODEL_DIR}/"
-  DESTINATION share/${PROJECT_NAME}/models/robotis_tb3
+  DIRECTORY vendor/robotis_mujoco_menagerie/robotis_tb3
+  DESTINATION share/${PROJECT_NAME}/vendor/robotis_mujoco_menagerie
 )
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
