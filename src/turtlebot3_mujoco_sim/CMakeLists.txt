@@ -13,7 +13,7 @@ find_package(ament_cmake REQUIRED)
 
 
 install(
-  DIRECTORY description config
+  DIRECTORY description config launch
   DESTINATION share/${PROJECT_NAME}
 )
 
