@@ -16,4 +16,3 @@ __pycache__/
 .DS_Store
 
 #third party
-src/turtlebot3_mujoco_sim/vendor/
