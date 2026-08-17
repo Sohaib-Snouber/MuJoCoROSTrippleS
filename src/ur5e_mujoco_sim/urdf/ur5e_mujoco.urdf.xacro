@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+
+<robot
+  xmlns:xacro="http://wiki.ros.org/xacro"
+  name="ur5e_mujoco">
+
+  <xacro:arg name="mujoco_model" default=""/>
+  <xacro:arg name="headless" default="false"/>
+
+  <!-- Official Universal Robots kinematic description -->
+  <xacro:include
+    filename="$(find ur_description)/urdf/ur_macro.xacro"/>
+
+  <link name="world"/>
+
+  <xacro:ur_robot
+    name="ur5e"
+    tf_prefix=""
+    parent="world"
+    joint_limits_parameters_file="$(find ur_description)/config/ur5e/joint_limits.yaml"
+    kinematics_parameters_file="$(find ur_description)/config/ur5e/default_kinematics.yaml"
+    physical_parameters_file="$(find ur_description)/config/ur5e/physical_parameters.yaml"
+    visual_parameters_file="$(find ur_description)/config/ur5e/visual_parameters.yaml"
+    safety_limits="false"
+    safety_pos_margin="0.15"
+    safety_k_position="20"
+    force_abs_paths="false">
+
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+
+  </xacro:ur_robot>
+
+
+  <ros2_control name="MujocoSystem" type="system">
+
+    <hardware>
+      <plugin>mujoco_ros2_control/MujocoSystemInterface</plugin>
+
+      <param name="mujoco_model">$(arg mujoco_model)</param>
+      <param name="initial_keyframe">home</param>
+      <param name="headless">$(arg headless)</param>
+    </hardware>
+
+
+    <joint name="shoulder_pan_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="shoulder_lift_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="elbow_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="wrist_1_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="wrist_2_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="wrist_3_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+  </ros2_control>
+
+</robot>
