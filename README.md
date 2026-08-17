@@ -18,6 +18,7 @@ cd MuJoCoROSTrippleS
 
 rosdep update
 
+vcs import src/third_party < dependencies.repos
 
 rosdep install \
   --from-paths src \
