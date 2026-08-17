@@ -3,8 +3,3 @@ repositories:
     type: git
     url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Description.git
     version: 39242984dc8d1fff9584c922c17c69c58df3591d
-
-  mujoco_menagerie:
-    type: git
-    url: https://github.com/google-deepmind/mujoco_menagerie.git
-    version: da76818e269b82289eba39808e2fb91d679d6994

@@ -1,0 +1,90 @@
+<mujoco_inputs>
+
+  <raw_inputs>
+
+    <option integrator="implicitfast"/>
+
+    <default>
+
+      <default class="visual">
+        <geom
+          group="2"
+          type="mesh"
+          contype="0"
+          conaffinity="0"/>
+      </default>
+
+      <default class="collision">
+        <geom
+          group="3"
+          type="mesh"/>
+      </default>
+
+    </default>
+
+
+    <actuator>
+
+      <position
+        name="shoulder_pan"
+        joint="shoulder_pan_joint"
+        kp="2000"
+        kv="400"
+        ctrlrange="-6.28319 6.28319"
+        forcerange="-150 150"/>
+
+      <position
+        name="shoulder_lift"
+        joint="shoulder_lift_joint"
+        kp="2000"
+        kv="400"
+        ctrlrange="-6.28319 6.28319"
+        forcerange="-150 150"/>
+
+      <position
+        name="elbow"
+        joint="elbow_joint"
+        kp="2000"
+        kv="400"
+        ctrlrange="-3.14159 3.14159"
+        forcerange="-150 150"/>
+
+      <position
+        name="wrist_1"
+        joint="wrist_1_joint"
+        kp="500"
+        kv="100"
+        ctrlrange="-6.28319 6.28319"
+        forcerange="-28 28"/>
+
+      <position
+        name="wrist_2"
+        joint="wrist_2_joint"
+        kp="500"
+        kv="100"
+        ctrlrange="-6.28319 6.28319"
+        forcerange="-28 28"/>
+
+      <position
+        name="wrist_3"
+        joint="wrist_3_joint"
+        kp="500"
+        kv="100"
+        ctrlrange="-6.28319 6.28319"
+        forcerange="-28 28"/>
+
+    </actuator>
+
+
+    <keyframe>
+
+      <key
+        name="home"
+        qpos="-1.5708 -1.5708 1.5708 -1.5708 -1.5708 0"
+        ctrl="-1.5708 -1.5708 1.5708 -1.5708 -1.5708 0"/>
+
+    </keyframe>
+
+  </raw_inputs>
+
+</mujoco_inputs>
