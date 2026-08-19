@@ -7,6 +7,9 @@ from launch_ros.substitutions import FindPackageShare
 
 def generate_launch_description():
 
+    mujoco_namespace = "mujoco"
+    controller_manager = "/mujoco/controller_manager"
+
     xacro_file = PathJoinSubstitution([
         FindPackageShare("ur5e_mujoco_sim"),
         "urdf",
@@ -31,6 +34,7 @@ def generate_launch_description():
     robot_state_publisher = Node(
         package="robot_state_publisher",
         executable="robot_state_publisher",
+        namespace=mujoco_namespace,
         output="screen",
         parameters=[
             {
@@ -38,11 +42,16 @@ def generate_launch_description():
                 "use_sim_time": True,
             }
         ],
+        remappings=[
+            ("/tf", "/mujoco/tf"),
+            ("/tf_static", "/mujoco/tf_static"),
+        ],
     )
 
     control_node = Node(
         package="mujoco_ros2_control",
         executable="ros2_control_node",
+        namespace=mujoco_namespace,
         output="screen",
         parameters=[
             {
@@ -53,28 +62,39 @@ def generate_launch_description():
                 allow_substs=True,
             ),
         ],
+        remappings=[
+            ("/mujoco_actuators_states", "/mujoco/actuator_states"),
+        ],
     )
 
     joint_state_broadcaster_spawner = Node(
         package="controller_manager",
         executable="spawner",
+        output="screen",
         arguments=[
             "joint_state_broadcaster",
             "--controller-manager",
-            "/controller_manager",
+            controller_manager,
+            "--param-file",
+            controllers_file,
+            "--controller-ros-args",
+            "--ros-args "
+            "--remap /joint_states:=/mujoco/joint_states "
+            "--remap /dynamic_joint_states:=/mujoco/dynamic_joint_states",
         ],
-        output="screen",
     )
 
     joint_trajectory_controller_spawner = Node(
         package="controller_manager",
         executable="spawner",
+        output="screen",
         arguments=[
             "joint_trajectory_controller",
             "--controller-manager",
-            "/controller_manager",
+            controller_manager,
+            "--param-file",
+            controllers_file,
         ],
-        output="screen",
     )
 
     return LaunchDescription([
