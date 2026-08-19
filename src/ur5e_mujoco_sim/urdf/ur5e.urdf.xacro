@@ -4,6 +4,18 @@
   xmlns:xacro="http://www.ros.org/wiki/xacro"
   name="ur5e">
 
+  <xacro:arg
+    name="mujoco_model"
+    default="$(find ur5e_mujoco_sim)/generated/mjcf/mujoco_description_formatted.xml"/>
+  
+  <xacro:arg
+    name="initial_positions_file"
+    default="$(find ur5e_mujoco_sim)/config/initial_positions.yaml"/>
+
+  <xacro:property
+    name="initial_positions"
+    value="${xacro.load_yaml('$(arg initial_positions_file)')}"/>
+  
   <xacro:include
     filename="$(find ur_description)/urdf/ur_macro.xacro"/>
 
@@ -26,4 +38,74 @@
 
   </xacro:ur_robot>
 
+  <ros2_control name="MujocoSystem" type="system">
+
+    <hardware>
+      <plugin>mujoco_ros2_control/MujocoSystemInterface</plugin>
+
+      <param name="mujoco_model">$(arg mujoco_model)</param>
+      <param name="headless">false</param>
+    </hardware>
+
+    <!-- six UR5e joints -->
+    <joint name="shoulder_pan_joint">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">
+          ${initial_positions['shoulder_pan_joint']}
+        </param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="shoulder_lift_joint">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">
+          ${initial_positions['shoulder_lift_joint']}
+        </param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="elbow_joint">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">
+          ${initial_positions['elbow_joint']}
+        </param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="wrist_1_joint">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">
+          ${initial_positions['wrist_1_joint']}
+        </param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="wrist_2_joint">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">
+          ${initial_positions['wrist_2_joint']}
+        </param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="wrist_3_joint">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">
+          ${initial_positions['wrist_3_joint']}
+        </param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
 </robot>

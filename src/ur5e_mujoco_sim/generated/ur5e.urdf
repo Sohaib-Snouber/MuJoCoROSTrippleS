@@ -66,13 +66,13 @@
     <visual>
       <origin rpy="0 0 3.141592653589793" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///opt/ros/jazzy/share/ur_description/meshes/ur5e/visual/base.dae"/>
+        <mesh filename="file:///home/sohaib/MuJoCoROSTrippleS/install/ur_description/share/ur_description/meshes/ur5e/visual/base.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.141592653589793" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///opt/ros/jazzy/share/ur_description/meshes/ur5e/collision/base.stl"/>
+        <mesh filename="file:///home/sohaib/MuJoCoROSTrippleS/install/ur_description/share/ur_description/meshes/ur5e/collision/base.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -85,13 +85,13 @@
     <visual>
       <origin rpy="0 0 3.141592653589793" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///opt/ros/jazzy/share/ur_description/meshes/ur5e/visual/shoulder.dae"/>
+        <mesh filename="file:///home/sohaib/MuJoCoROSTrippleS/install/ur_description/share/ur_description/meshes/ur5e/visual/shoulder.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.141592653589793" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///opt/ros/jazzy/share/ur_description/meshes/ur5e/collision/shoulder.stl"/>
+        <mesh filename="file:///home/sohaib/MuJoCoROSTrippleS/install/ur_description/share/ur_description/meshes/ur5e/collision/shoulder.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -104,13 +104,13 @@
     <visual>
       <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0.138"/>
       <geometry>
-        <mesh filename="file:///opt/ros/jazzy/share/ur_description/meshes/ur5e/visual/upperarm.dae"/>
+        <mesh filename="file:///home/sohaib/MuJoCoROSTrippleS/install/ur_description/share/ur_description/meshes/ur5e/visual/upperarm.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0.138"/>
       <geometry>
-        <mesh filename="file:///opt/ros/jazzy/share/ur_description/meshes/ur5e/collision/upperarm.stl"/>
+        <mesh filename="file:///home/sohaib/MuJoCoROSTrippleS/install/ur_description/share/ur_description/meshes/ur5e/collision/upperarm.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -123,13 +123,13 @@
     <visual>
       <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0.007"/>
       <geometry>
-        <mesh filename="file:///opt/ros/jazzy/share/ur_description/meshes/ur5e/visual/forearm.dae"/>
+        <mesh filename="file:///home/sohaib/MuJoCoROSTrippleS/install/ur_description/share/ur_description/meshes/ur5e/visual/forearm.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0.007"/>
       <geometry>
-        <mesh filename="file:///opt/ros/jazzy/share/ur_description/meshes/ur5e/collision/forearm.stl"/>
+        <mesh filename="file:///home/sohaib/MuJoCoROSTrippleS/install/ur_description/share/ur_description/meshes/ur5e/collision/forearm.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -142,13 +142,13 @@
     <visual>
       <origin rpy="1.5707963267948966 0 0" xyz="0 0 -0.127"/>
       <geometry>
-        <mesh filename="file:///opt/ros/jazzy/share/ur_description/meshes/ur5e/visual/wrist1.dae"/>
+        <mesh filename="file:///home/sohaib/MuJoCoROSTrippleS/install/ur_description/share/ur_description/meshes/ur5e/visual/wrist1.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="1.5707963267948966 0 0" xyz="0 0 -0.127"/>
       <geometry>
-        <mesh filename="file:///opt/ros/jazzy/share/ur_description/meshes/ur5e/collision/wrist1.stl"/>
+        <mesh filename="file:///home/sohaib/MuJoCoROSTrippleS/install/ur_description/share/ur_description/meshes/ur5e/collision/wrist1.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -161,13 +161,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 -0.0997"/>
       <geometry>
-        <mesh filename="file:///opt/ros/jazzy/share/ur_description/meshes/ur5e/visual/wrist2.dae"/>
+        <mesh filename="file:///home/sohaib/MuJoCoROSTrippleS/install/ur_description/share/ur_description/meshes/ur5e/visual/wrist2.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 -0.0997"/>
       <geometry>
-        <mesh filename="file:///opt/ros/jazzy/share/ur_description/meshes/ur5e/collision/wrist2.stl"/>
+        <mesh filename="file:///home/sohaib/MuJoCoROSTrippleS/install/ur_description/share/ur_description/meshes/ur5e/collision/wrist2.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -178,15 +178,15 @@
   </link>
   <link name="wrist_3_link">
     <visual>
-      <origin rpy="1.5707963267948966 0 0" xyz="0 0 -0.0989"/>
+      <origin rpy="1.5707963267948966 0 0" xyz="0 -0.0005 -0.0989"/>
       <geometry>
-        <mesh filename="file:///opt/ros/jazzy/share/ur_description/meshes/ur5e/visual/wrist3.dae"/>
+        <mesh filename="file:///home/sohaib/MuJoCoROSTrippleS/install/ur_description/share/ur_description/meshes/ur5e/visual/wrist3.dae"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="1.5707963267948966 0 0" xyz="0 0 -0.0989"/>
+      <origin rpy="1.5707963267948966 0 0" xyz="0 -0.0005 -0.0989"/>
       <geometry>
-        <mesh filename="file:///opt/ros/jazzy/share/ur_description/meshes/ur5e/collision/wrist3.stl"/>
+        <mesh filename="file:///home/sohaib/MuJoCoROSTrippleS/install/ur_description/share/ur_description/meshes/ur5e/collision/wrist3.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -293,4 +293,66 @@
     <parent link="flange"/>
     <child link="tool0"/>
   </joint>
+  <ros2_control name="MujocoSystem" type="system">
+    <hardware>
+      <plugin>mujoco_ros2_control/MujocoSystemInterface</plugin>
+      <param name="mujoco_model">/home/sohaib/MuJoCoROSTrippleS/install/ur5e_mujoco_sim/share/ur5e_mujoco_sim/generated/mjcf/mujoco_description_formatted.xml</param>
+      <param name="headless">false</param>
+    </hardware>
+    <!-- six UR5e joints -->
+    <joint name="shoulder_pan_joint">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">
+          -1.5708
+        </param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="shoulder_lift_joint">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">
+          -1.5708
+        </param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="elbow_joint">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">
+          1.5708
+        </param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="wrist_1_joint">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">
+          -1.5708
+        </param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="wrist_2_joint">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">
+          -1.5708
+        </param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="wrist_3_joint">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">
+          1.5708
+        </param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
 </robot>
